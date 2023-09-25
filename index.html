@@ -954,6 +954,19 @@
 	  </div>
 	</amp-lightbox>
 
+<amp-state id="images">
+  <script type="application/json">
+    {
+      "imageUrl_1": "http://assets.alectrica.cl/350x350",
+      "imageUrl_2": "http://assets.alectrica.cl/250x250",
+      "imageUrl_3": "http://assets.alectrica.cl/150x150"
+    }
+  </script>
+</amp-state>
+<button on="tap:AMP.setState({imageUrl: images.imageUrl_1})">Image 1</button>
+<button on="tap:AMP.setState({imageUrl: images.imageUrl_2})">Image 2</button>
+<button on="tap:AMP.setState({imageUrl: images.imageUrl_3})">Image 3</button>
+
 	<div class="product-gallery">
 		<ul 
 		  hidden
@@ -961,6 +974,7 @@
 		  <li>
 		    <amp-img on="tap:AMP.setState({product: {selectedSlideForBlue: 0}})"
 		      src="/img/coronavid_60_40.png"
+		      [src]="imageUrl ? imageUrl : images.imageUrl_1"
 		      width="60"
 		      height="40"
 		      class="selected"
