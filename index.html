@@ -967,6 +967,15 @@
 <button on="tap:AMP.setState({imageUrl: images.imageUrl_2})">Image 2</button>
 <button on="tap:AMP.setState({imageUrl: images.imageUrl_3})">Image 3</button>
 
+
+<amp-img id="amp-img"
+  src="http://via.placeholder.com/350x350"
+  layout="responsive"
+  width="350"
+  height="350"
+  [src]="imageUrl ? imageUrl : images.imageUrl_1">
+</amp-img>
+
 	<div class="product-gallery">
 		<ul 
 		  hidden
