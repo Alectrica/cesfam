@@ -1071,6 +1071,8 @@
 
 
 
+
+
 	      <div class="product-gallery">
 
 		<ul
@@ -1330,6 +1332,21 @@
 	      Carruseles
 	    -->
 
+
+
+<amp-state id="sintoma">
+  <script type="application/json">
+    {
+      "350x350"    : "http://via.placeholder.com/350x350",
+      "casita"     : "https://storage.googleapis.com/alectrica/img/casita.png",
+      "amigdalitis": "https://storage.googleapis.com/alectrica/img/sintomas/dolores_de_garganta_01.jpeg",
+      "secreciones": "https://storage.googleapis.com/alectrica/img/sintomas/secreciones_nasales_01.jpg"
+    }
+  </script>
+</amp-state>
+
+
+
 	     <div class="product-gallery">
 		<amp-carousel id="blue-apple-carousel"
 		  width="1024"
@@ -1339,7 +1356,7 @@
 		  [slide]="product.selectedSlideForBlue"
 		  on="slideChange: AMP.setState({product: {selectedSlide: event.index, selectedSlideForBlue: event.index}})"
 		  class="fadeIn"
-		  [hidden]="product.selectedColor != 'blue'">
+		  [hidden]="product.selectedColor != 'blue'"   >
 		  <div 
 		    role="button"
 		    tabindex="0">
@@ -1354,7 +1371,7 @@
 		      height="682"
 		      layout="responsive"
 		      on="tap:gallery-lightbox"
-                      [src]="imageUrl ? imageUrl : images.imageUrl_1"
+                      [src]="sintoma.secreciones ? sintoma.secreciones : 350x350"
 		      role="button"
 		      tabindex="0">
 		    </amp-img>
@@ -1375,6 +1392,7 @@
 		      layout="responsive"
 		      on="tap:gallery-lightbox"
 		      role="button"
+                      [src]="sintoma.amigdalitis ? sintoma.amigdalitis : 350x350"
 		      tabindex="0">
 		    </amp-img>
 
